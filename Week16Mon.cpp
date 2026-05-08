@@ -7,9 +7,13 @@ template <typename T>
 void heapsort(vector<T>& arr) {
     MinHeap<T> h;
 
-    // TODO: Insert all elements into heap using sift-down insert from lecture
+    // Insert all elements into the heap
+    for (const T& x : arr)
+        h.insert(x);
 
-    // TODO: Repeatedly remove root and store back into array
+    // Repeatedly remove the root (minimum) and place back into array
+    for (int i = 0; i < (int)arr.size(); i++)
+        arr[i] = h.removeRoot();
 }
 
 int main() {
